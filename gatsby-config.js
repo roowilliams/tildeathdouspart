@@ -6,12 +6,20 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://tildeathdouspart.us20.list-manage.com/subscribe/post?u=17928265060259d7c879bd1eb&amp;id=0696ad852c', // see instructions section below
       },
     },
     `gatsby-transformer-sharp`,
@@ -29,7 +37,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-resolve-src',
-    `gatsby-plugin-styled-components`,
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { media } from 'utils/styled-media'
+import { media } from 'styles/styled-media'
 
 export const Container = styled.div`
   width: 100%;
@@ -19,7 +19,7 @@ export const Content = styled.div`
   flex-shrink: 0;
   justify-content: space-around;
   width: 100%;
-  transition: all 8s ease;
+  transition: all 4s ease;
 
   background-color: #1a1b1d;
   ${props => (props.vcenter ? `align-items: center` : null)}
@@ -34,15 +34,15 @@ export const BackgroundContent = styled(Content)`
         background-repeat: no-repeat;    
     `
       : null}
-    background-position: ${props => (props.animate ? '26% 95%' : '28% 100%')};
-    background-size: ${props => (props.animate ? '50%' : '48%')};
+    background-position: ${props => (props.animate ? '60% 0%' : '50% 4%')};
+    background-size: ${props => (props.animate ? '50%' : '40%')};
 
   ${media.smallmobile`
     max-width: 400px;
   `}
 `
 export const Column = styled.div`
-  width: 50%;
+  width: 58%;
   ${media.mobile`
     width: 90%;
   `}

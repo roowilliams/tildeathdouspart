@@ -6,7 +6,6 @@ class ScrollProvider extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showIntro: false,
       scrollTop: 0,
     }
   }

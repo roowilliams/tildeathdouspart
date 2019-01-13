@@ -5,7 +5,6 @@ export const Display1 = styled.h1`
   font-weight: 700;
   font-size: 3em;
   text-transform: uppercase;
-  // letter-spacing: 0.03em;
 `
 
 export const Title1 = styled.h1`
@@ -22,8 +21,8 @@ export const Title2 = styled.h2`
   color: ${props => props.theme.titleTextColor};
   text-transform: uppercase;
   letter-spacing: 0em;
-  line-height: 0.78;
-  font-size: 8em;
+  line-height: 0.88;
+  font-size: 4.4em;
   margin: 0.6em 0 0.2em;
   padding-bottom: 0.1em;
   border-bottom: 0.04em solid ${props => props.theme.titleTextColor};
