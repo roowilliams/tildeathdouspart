@@ -33,6 +33,9 @@ export class InfoSection extends Component {
     this.bg = {}
   }
 
+  componentWillMount() {
+    if (typeof window !== 'undefined') this.innerHeight = window.innerHeight
+  }
   render() {
     const { scrollTop } = this.props
     return (
@@ -41,7 +44,7 @@ export class InfoSection extends Component {
         vcenter
         ref={ref => (this.bg = ref)}
         animate={
-          this.bg && scrollTop > this.bg.offsetTop - window.innerHeight / 1.8
+          this.bg && scrollTop > this.bg.offsetTop - this.innerHeight / 1.8
             ? true
             : false
         }
@@ -99,6 +102,7 @@ export class InfoSection extends Component {
             details closer to the date!
           </Paragraph>
           <Title2>Out of Towners</Title2>
+          <Title3>Accommodation</Title3>
           <Paragraph>
             We have 10 double rooms reserved at our favourite local hotel,{' '}
             <a href="https://www.angelabergavenny.com/" target="_blank">
@@ -125,26 +129,53 @@ export class InfoSection extends Component {
             </a>
             .
           </Paragraph>
+          <Title3>Transport</Title3>
+          <Paragraph>
+            For everyone staying at the Angel/in Abergavenny town, transport to
+            and from the wedding field will be provided. We’ll be in touch to
+            confirm numbers closer to the date!
+          </Paragraph>
 
           <Title2>WTF IS ABERGAVENNY</Title2>
           <Paragraph>
             A pretty, little welsh town, about 20 mins from Lydia’s house and
-            the wedding field. It has cute coffee shops/art galleries, bakeries,
-            award-winning, sausage-making butchers, historical ruins, hikes and
-            weekend craft/food markets etc.
+            the wedding field. It has{' '}
+            <a href="http://artshopandgallery.co.uk/" target="_blank">
+              cute coffee shops
+            </a>
+            /art galleries,{' '}
+            <a href="https://www.theangelbakery.com/" target="_blank">
+              bakeries
+            </a>
+            , award-winning, sausage-making butchers,{' '}
+            <a href="http://www.castlewales.com/abergav.html" target="_blank">
+              historical ruins
+            </a>
+            ,{' '}
+            <a
+              href="https://www.nationaltrust.org.uk/sugarloaf-and-usk-valley/features/the-sugarloaf"
+              target="_blank"
+            >
+              hikes
+            </a>{' '}
+            and weekend{' '}
+            <a href="http://abergavennynow.com/abergavenny-market/">
+              craft/food markets
+            </a>
+            .
           </Paragraph>
           <Title2>AND HOW DO I GET THERE</Title2>
           <Paragraph>
             To get to Abergavenny from London, either take a train to Newport,
-            South Wales and get a short cab or change at Newport for Abergavenny
+            South Wales and get a taxi or change at Newport for Abergavenny
             station. Uber has not yet reached rural Wales, so here are some
             local taxi numbers:{' '}
             <a href="http://dragontaxis.com/newport/" target="_blank">
-              Dragon (Newport)
+              Dragon (Base in Newport)
             </a>
             ,{' '}
             <a href="http://www.lewistaxisofabergavenny.co.uk/" target="_blank">
-              Lewis (Abergavenny)
+              Lewis (Based in Abergavenny)
             </a>
           </Paragraph>
 

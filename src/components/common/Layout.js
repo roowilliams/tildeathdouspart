@@ -19,7 +19,7 @@ export const Content = styled.div`
   flex-shrink: 0;
   justify-content: space-around;
   width: 100%;
-  transition: all 4s ease;
+  transition: background-position 4s ease, background-size 4s ease;
 
   background-color: #1a1b1d;
   ${props => (props.vcenter ? `align-items: center` : null)}
@@ -30,7 +30,6 @@ export const BackgroundContent = styled(Content)`
     props.bgImage
       ? `
         background-image: url(${props.bgImage});
-        // background-size: cover;
         background-repeat: no-repeat;    
     `
       : null}

@@ -3,7 +3,7 @@ export const base = {
   titleTextColor: 'rgb(245, 232, 209)',
   bodyTextColor: 'rgba(245,245,245)',
   secondaryBodyTextColor: 'rgb(226, 187, 184)',
-  placeholderTextColor: 'rgb(180, 170, 160)',
+  placeholderTextColor: 'rgb(160, 150, 140)',
   secondaryColor: 'white',
   primaryColor: '#2f95dc',
   actionColor: 'rgb(235, 73, 96)',

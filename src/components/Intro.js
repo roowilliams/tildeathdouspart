@@ -31,7 +31,7 @@ class Intro extends Component {
 
     this.state = {
       currentFrame: 0,
-      animationFinished: false
+      animationFinished: false,
     }
   }
 
@@ -62,7 +62,6 @@ class Intro extends Component {
   }
 
   onFinish = () => {
-    console.log('finishehdddd')
     this.setState({ animationFinished: true })
     const { onFinish } = this.props
     if (onFinish) onFinish()
@@ -71,7 +70,6 @@ class Intro extends Component {
   render() {
     const { currentFrame, animationFinished } = this.state
     const { words } = this.props
-    console.log('animationfn', animationFinished)
     return (
       <Container>
         {!animationFinished ? (

@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Spinner } from 'components/common'
+import { media } from 'styles/styled-media'
 
 const FormContainer = styled.form`
   margin-bottom: 6rem;
+  ${media.mobile`
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`}
 `
 
 const Input = styled.input`
@@ -14,17 +22,27 @@ const Input = styled.input`
   margin: 0 0.8rem 0.1em 0;
   padding: 0.6rem;
   font-size: 1rem;
+  width: 33%;
   ::placeholder {
     color: ${props => props.theme.placeholderTextColor};
   }
+
+  ${media.mobile`
+  width: 100%;
+    margin: 0 0 0.5em 0;
+  `}
 `
 const TextInput = styled(Input).attrs({
   type: 'text',
-  size: props => (props.small ? 5 : undefined),
 })``
 
 const Row = styled.div`
   display: flex;
+  ${media.mobile`
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  `}
 `
 
 const SubmitConfirmation = styled.div`
@@ -44,9 +62,13 @@ const ActionButton = styled.button`
   background-color: ${props => props.theme.actionColor};
   border: 0;
   color: white;
-  min-width: 8rem;
+  width: 33%;
   font-size: 1.5rem;
   font-weight: bold;
+
+  ${media.mobile`
+    width: 50%;
+  `}
 `
 const ResetFormButton = styled(ActionButton)``
 
@@ -68,7 +90,8 @@ const ErrorText = styled.div`
 const RSVPForm = ({
   onChange,
   handleSubmit,
-  name,
+  firstName,
+  lastName,
   email,
   submitting,
   submitted,
@@ -83,29 +106,28 @@ const RSVPForm = ({
             name="firstName"
             placeholder="First Name"
             onChange={onChange}
-            value={name}
-            disabled={submitting}
+            value={firstName}
           />
           <TextInput
             name="lastName"
             placeholder="Last Name"
             onChange={onChange}
-            value={name}
-            disabled={submitting}
+            value={lastName}
           />
           <TextInput
             name="email"
             placeholder="you@email.com"
-            value={email}
             onChange={onChange}
-            disabled={submitting}
+            value={email}
           />
         </Row>
         <Row>
           <ErrorText>{!!error ? error : ''}</ErrorText>
         </Row>
 
-        <ActionButton type="submit">RSVP</ActionButton>
+        <ActionButton type="submit" disabled={submitting}>
+          RSVP
+        </ActionButton>
       </FormContainer>
     ) : (
       <SpinnerContainer>

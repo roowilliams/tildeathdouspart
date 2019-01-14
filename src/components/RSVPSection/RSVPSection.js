@@ -43,6 +43,8 @@ export class RSVPSection extends Component {
   }
 
   checkResult = data => {
+    console.log(data)
+    console.log(this.state)
     if (data.result === 'error') {
       this.handleError(data.msg)
       return
@@ -54,7 +56,7 @@ export class RSVPSection extends Component {
     if (error.includes('already subscribed to list')) {
       error = `You've already RSVP'd under this email!`
     }
-    this.setState({ error })
+    this.setState({ error: error })
   }
 
   onSuccess = () => {
