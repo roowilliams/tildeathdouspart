@@ -164,7 +164,7 @@ export class InfoSection extends Component {
             </a>
             .
           </Paragraph>
-          <Title2>AND HOW DO I GET THERE</Title2>
+          <Title2>HOW DO I GET THERE</Title2>
           <Paragraph>
             To get to Abergavenny from London, either take a train to Newport,
             South Wales and get a taxi or change at Newport for Abergavenny

@@ -7,7 +7,7 @@ export const Display1 = styled.h1`
   font-size: 3em;
   text-transform: uppercase;
   ${media.mobile`
-    font-size: 3.6em;
+    font-size: 2.4em;
   `}
 `
 
@@ -50,7 +50,6 @@ export const Paragraph = styled.p`
   color: ${props => props.theme.titleTextColor};
   font-weight: 400;
   line-height: ${props => (props.lineHeight ? props.lineHeight : 1.4)};
-  font-size: 1.3em;
   margin-block-start: 0.4em;
   margin-block-end: 1em;
 `

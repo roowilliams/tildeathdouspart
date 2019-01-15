@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import { Spinner } from 'components/common'
+import { Spinner, Paragraph } from 'components/common'
 import { media } from 'styles/styled-media'
 
 const FormContainer = styled.form`
-  margin-bottom: 6rem;
-  ${media.mobile`
-  margin-top: 3rem;
+  min-height: 14rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 4rem;
+
+  ${media.mobile`
+  margin-top: 3rem;
 `}
 `
 
@@ -19,17 +21,18 @@ const Input = styled.input`
   border: 1px solid ${props => props.theme.titleTextColor};
   background-color: ${props => props.theme.titleTextColor};
   display: block;
-  margin: 0 0.8rem 0.1em 0;
+  margin: 0 0.5rem 0.1em 0.5rem;
   padding: 0.6rem;
   font-size: 1rem;
   width: 33%;
   ::placeholder {
     color: ${props => props.theme.placeholderTextColor};
   }
+  max-width: 20rem;
 
-  ${media.mobile`
-  width: 100%;
-    margin: 0 0 0.5em 0;
+  ${media.smallmobile`
+    width: 80%;
+    margin: 0 3rem 0.5em 3rem;
   `}
 `
 const TextInput = styled(Input).attrs({
@@ -38,10 +41,15 @@ const TextInput = styled(Input).attrs({
 
 const Row = styled.div`
   display: flex;
-  ${media.mobile`
+  margin: 1rem 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  ${media.smallmobile`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0;
   `}
 `
 
@@ -62,11 +70,12 @@ const ActionButton = styled.button`
   background-color: ${props => props.theme.actionColor};
   border: 0;
   color: white;
-  width: 33%;
+  min-width: 30%;
   font-size: 1.5rem;
   font-weight: bold;
+  max-width: 20rem;
 
-  ${media.mobile`
+  ${media.smallmobile`
     width: 50%;
   `}
 `
@@ -83,8 +92,10 @@ const SpinnerContainer = styled.div`
 const ErrorText = styled.div`
   display: flex;
   align-items: center;
-  height: 3rem;
+  height: 2rem;
   color: ${props => props.theme.actionColor};
+  text-align: center;
+  margin: 1rem 0;
 `
 
 const RSVPForm = ({
@@ -98,47 +109,53 @@ const RSVPForm = ({
   resetForm,
   error,
 }) => {
-  return !submitted ? (
-    !submitting ? (
-      <FormContainer onSubmit={handleSubmit}>
-        <Row>
-          <TextInput
-            name="firstName"
-            placeholder="First Name"
-            onChange={onChange}
-            value={firstName}
-          />
-          <TextInput
-            name="lastName"
-            placeholder="Last Name"
-            onChange={onChange}
-            value={lastName}
-          />
-          <TextInput
-            name="email"
-            placeholder="you@email.com"
-            onChange={onChange}
-            value={email}
-          />
-        </Row>
-        <Row>
-          <ErrorText>{!!error ? error : ''}</ErrorText>
-        </Row>
+  return (
+    <FormContainer onSubmit={handleSubmit}>
+      {!submitted ? (
+        !submitting ? (
+          <Fragment>
+            <Row>
+              <TextInput
+                name="firstName"
+                placeholder="First Name"
+                onChange={onChange}
+                value={firstName}
+              />
+              <TextInput
+                name="lastName"
+                placeholder="Last Name"
+                onChange={onChange}
+                value={lastName}
+              />
+              <TextInput
+                name="email"
+                placeholder="you@email.com"
+                onChange={onChange}
+                value={email}
+              />
+            </Row>
+            <Row>
+              <ErrorText>{!!error ? error : ''}</ErrorText>
+            </Row>
 
-        <ActionButton type="submit" disabled={submitting}>
-          RSVP
-        </ActionButton>
-      </FormContainer>
-    ) : (
-      <SpinnerContainer>
-        <Spinner />
-      </SpinnerContainer>
-    )
-  ) : (
-    <SubmitConfirmation>
-      Thank you!
-      <ResetFormButton onClick={resetForm}>RSVP another guest</ResetFormButton>
-    </SubmitConfirmation>
+            <ActionButton type="submit" disabled={submitting}>
+              RSVP
+            </ActionButton>
+          </Fragment>
+        ) : (
+          <SpinnerContainer>
+            <Spinner />
+          </SpinnerContainer>
+        )
+      ) : (
+        <SubmitConfirmation>
+          <Paragraph>Thank you!</Paragraph>
+          <ResetFormButton onClick={resetForm}>
+            RSVP another guest
+          </ResetFormButton>
+        </SubmitConfirmation>
+      )}
+    </FormContainer>
   )
 }
 

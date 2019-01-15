@@ -36,8 +36,9 @@ export const BackgroundContent = styled(Content)`
     background-position: ${props => (props.animate ? '60% 0%' : '50% 4%')};
     background-size: ${props => (props.animate ? '50%' : '40%')};
 
-  ${media.smallmobile`
+  ${media.mobile`
     max-width: 400px;
+    background-size: ${props => (props.animate ? '128%' : '70%')};
   `}
 `
 export const Column = styled.div`
