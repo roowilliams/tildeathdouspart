@@ -43,7 +43,7 @@ export const Title3 = styled.h3`
   text-transform: uppercase;
   letter-spacing: 0.02em;
   text-decoration: underline;
-  margin: 0.2em 0 0.1em;
+  margin: 0.6em 0 0.2em;
 `
 export const Paragraph = styled.p`
   font-family: ${props => props.theme.bodyFontFamily};

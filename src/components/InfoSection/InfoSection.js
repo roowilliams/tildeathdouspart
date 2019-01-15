@@ -83,22 +83,24 @@ export class InfoSection extends Component {
             Bring the sunshine by wearing light and bright colors - white, grey,
             cream, pastels, eggshell, florals.
           </Paragraph>
+          <Paragraph>Please do not wear black.</Paragraph>
           <Title3>Gifts</Title3>
           <Paragraph>
-            Please do not buy us gifts. Your presence on the day is the best
-            present we could ask for.
+            Please do not buy us gifts.
+            <br />
+            Your presence is the best present we could ask for.
           </Paragraph>
           <Title3>Babies</Title3>
           <Paragraph>
-            We adore your babies, but please don’t bring them on the day.
+            We adore your babies, but ask that you do not bring them on the day.
             <br />
-            Ask us if you need babysitter info.
+            We have trusted babysitter numbers if you need.
           </Paragraph>
 
           <Title2>The Day After</Title2>
           <Paragraph>
             Sonia and Peter (Lydia’s parents) will be hosting a hangover brunch
-            at Lydia’s house from 11.30am on Sunday 25th. We’ll be in touch with
+            at Lydia’s house from noon on Sunday 25th. We’ll be in touch with
             details closer to the date!
           </Paragraph>
           <Title2>Out of Towners</Title2>
@@ -117,7 +119,7 @@ export class InfoSection extends Component {
               reservations@angelabergavenny.com
             </a>
             <br />
-            or call +44 1873857121, and quote LYDIA + ROO WEDDING to book.
+            or call +44 187-385-7121, and quote LYDIA + ROO WEDDING to confirm.
           </Paragraph>
           <Paragraph>
             There are also plenty of super cute{' '}
@@ -129,14 +131,8 @@ export class InfoSection extends Component {
             </a>
             .
           </Paragraph>
-          <Title3>Transport</Title3>
-          <Paragraph>
-            For everyone staying at the Angel/in Abergavenny town, transport to
-            and from the wedding field will be provided. We’ll be in touch to
-            confirm numbers closer to the date!
-          </Paragraph>
 
-          <Title2>WTF IS ABERGAVENNY</Title2>
+          <Title3>WTF is Abergavenny?</Title3>
           <Paragraph>
             A pretty, little welsh town, about 20 mins from Lydia’s house and
             the wedding field. It has{' '}
@@ -147,7 +143,7 @@ export class InfoSection extends Component {
             <a href="https://www.theangelbakery.com/" target="_blank">
               bakeries
             </a>
-            , award-winning, sausage-making butchers,{' '}
+            ,{' '}
             <a href="http://www.castlewales.com/abergav.html" target="_blank">
               historical ruins
             </a>
@@ -164,25 +160,24 @@ export class InfoSection extends Component {
             </a>
             .
           </Paragraph>
-          <Title2>HOW DO I GET THERE</Title2>
+          <Title3>Getting There</Title3>
           <Paragraph>
             To get to Abergavenny from London, either take a train to Newport,
             South Wales and get a taxi or change at Newport for Abergavenny
             station. Uber has not yet reached rural Wales, so here are some
             local taxi numbers:{' '}
             <a href="http://dragontaxis.com/newport/" target="_blank">
-              Dragon (Base in Newport)
+              Dragon (Based in Newport)
             </a>
             ,{' '}
             <a href="http://www.lewistaxisofabergavenny.co.uk/" target="_blank">
               Lewis (Based in Abergavenny)
             </a>
           </Paragraph>
-
-          <Title2>Transport</Title2>
+          <Title3>Transport on the Day</Title3>
           <Paragraph>
-            For everyone staying at the Angel/in Abergavenny town, transport to
-            and from the wedding field will be provided. We’ll be in touch to
+            For everyone staying at the Angel or in Abergavenny town, transport
+            to and from the wedding field will be provided. We’ll be in touch to
             confirm numbers closer to the date!
           </Paragraph>
         </Column>

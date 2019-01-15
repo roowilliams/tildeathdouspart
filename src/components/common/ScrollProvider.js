@@ -11,10 +11,10 @@ class ScrollProvider extends Component {
   }
   componentDidMount() {
     window.addEventListener('scroll', throttle(this.handleScroll, 100))
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: 'smooth',
+    // })
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
