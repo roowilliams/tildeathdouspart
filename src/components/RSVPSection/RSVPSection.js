@@ -79,7 +79,7 @@ export class RSVPSection extends Component {
         <Title2>RSVP</Title2>
 
         <Paragraph lineHeight={1.4}>
-          Please RSVP for each, individual guest by <b>15 02 2019</b>
+          Please RSVP for each, individual guest.
         </Paragraph>
         <RSVPForm
           onChange={this.onChange}
